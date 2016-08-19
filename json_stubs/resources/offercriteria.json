@@ -21,6 +21,16 @@
   rateCode: "",
   promoCode: "",
   groupCode: ""
+  links": [ 
+    {
+      "rel": "self",
+      "href": "/offercriteria/1"
+    },
+    {
+      "rel": "offers",
+      "href": "/offercriteria/1/offers"
+    } 
+  ]
 }
 
 
