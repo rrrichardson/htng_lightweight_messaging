@@ -39,7 +39,7 @@ OfferCriteria-->Client : 201 with URI
 Client->Offers : GET URI/offers
 Offers-->Client : Offers json
 
-title "Edit Offer Search"
+title "Edit Existing Offer Search"
 autonumber
 Client->Client: Edit criteria object
 Client->OfferCriteria : PUT criteria object to URI
