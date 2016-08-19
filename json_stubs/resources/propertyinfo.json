@@ -2,7 +2,6 @@
   //TODO: remove address from property info
   //TODO: remove contact numbers from property info
   //TODO: remove name from spec
-  Hotel: "../{hotel.code}",
   Code: "",
   Awards: [
     //TODO: build out award utility object in spec based on OTA award
@@ -132,5 +131,15 @@
         ]
     }
   ],
-  VendorMessages: "" //TODO: for review
+  VendorMessages: "" //TODO: for review,
+  links:[
+    {
+      "rel": "self",
+      "href": "/hotels/{hotel.code}/propertyinfo"
+    },
+    {
+      "rel": "hotel",
+      "href": "/hotels/{hotel.code}"
+    }
+  ]
 }
