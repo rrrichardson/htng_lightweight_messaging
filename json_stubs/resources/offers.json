@@ -24,5 +24,11 @@
   ], //accommodates for price varying by day - TODO: add to wiki
   taxes: []
   dates:
-  ttl: ""
+  expires: ""
+  links": [ 
+    {
+      "rel": "self",
+      "href": "/offercriteria/1/offers/1"
+    }
+  ]
 }
