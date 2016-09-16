@@ -13,8 +13,7 @@
 * hotel (this is part of the URL)
 
 {
-  code: "",
-  hotel: "/hotels/{hotel.code}",
+  id: "",
   guestCount: 4,
   addOns: [],
   roomRates: [
@@ -23,6 +22,18 @@
     }
   ], //accommodates for price varying by day - TODO: add to wiki
   taxes: []
-  dates:
-  ttl: ""
+  dates:[ //date range
+      
+  ],
+  expires: "", //datetime
+  links": [ 
+    {
+      "rel": "self",
+      "href": "/offercriteria/1/offers/1"
+    },
+    {
+      "rel": "hotel",
+      "href": "/hotels/{hotel.code}}"
+    }
+  ]
 }

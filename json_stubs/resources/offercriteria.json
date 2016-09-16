@@ -20,6 +20,16 @@
   rateCode: "",
   promoCode: "",
   groupCode: ""
+  links": [ 
+    {
+      "rel": "self",
+      "href": "/offercriteria/1"
+    },
+    {
+      "rel": "offers",
+      "href": "/offercriteria/1/offers"
+    } 
+  ]
 }
 
 
@@ -29,3 +39,19 @@
 // open question: since we're "Creating" offers that are custom to that user's offer context, perhaps this should be a POST (however this would be odd in the fact that a list of offers is returned)
 
 GET /hotels/ABQBR01/offers?offerContext=123&roomType=Suite
+
+title "New Offer Search"
+autonumber
+Client->Client: Build criteria object
+Client->OfferCriteria : POST criteria object
+OfferCriteria-->Client : 201 with URI
+Client->Offers : GET URI/offers
+Offers-->Client : Offers json
+
+title "Edit Existing Offer Search"
+autonumber
+Client->Client: Edit criteria object
+Client->OfferCriteria : PUT criteria object to URI
+OfferCriteria-->Client : 202
+Client->Offers : GET URI/offers
+Offers-->Client : Offers json
