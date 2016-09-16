@@ -46,7 +46,7 @@ Client->Client: Build criteria object
 Client->OfferCriteria : POST criteria object
 OfferCriteria-->Client : 201 with URI
 Client->Offers : GET {URI}/offers
-Offers-->Client : Offers json
+Offers-->Client : Offers Response
 
 title "Edit Existing Offer Search"
 autonumber
@@ -54,4 +54,4 @@ Client->Client: Edit criteria object
 Client->OfferCriteria : PUT criteria object to URI
 OfferCriteria-->Client : 202
 Client->Offers : GET {URI}/offers
-Offers-->Client : Offers json
+Offers-->Client : Offers Response
