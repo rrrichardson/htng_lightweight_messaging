@@ -15,8 +15,7 @@
       count: 1
     }
   ],
-  arrivalDate: "2016-08-08",
-  departureDate: "2016-08-14",
+  stay : {arrivalDate :"2015-12-25", departureDate : "2015-12-31"},
   guestProfile: null,
   rateCode: "",
   promoCode: "",
