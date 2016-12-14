@@ -1,0 +1,129 @@
+tProfile": {
+    "metadata": { // TODO: add this as utility object to be included with every resource response
+        "version": 0.1,
+        "createTime": "2015-12-01T13:36:47.550+1.00",
+        "modifiedTime": "2015-12-01T13:36:47.550+1.00",
+        "modifiedBy": "CRS",
+        "isDeleted": false,
+        "hmac": "6476df3aac780622368173fe6e768a2edc3932c8"
+    },
+    "id": "19640229-3015551212",
+    "person": {
+        "personName": {
+            "Surname": "Bradley",
+            "GivenName": "Austin",
+            "PreferredName": "Brad",
+            "Prefix": "Mr."
+        },
+        "addresses": [{
+            "Type": "home",
+            "AddressLine": "1203 Maine Ave",
+            "BldgRoom": "Apt. 32A",
+            "CityName": "Baltimore",
+            "StateProv": "MD",
+            "PostalCode": "21202",
+            "CountryName": "US"
+        }],
+        "phones": [{
+            "type": "home",
+            "number": "+1 410 555 1212",
+            "isPrimary": true
+        }, {
+            "type": "mobile",
+            "number": "+1 240 555 4321",
+            "isPrimary": false
+        }],
+        "externalUrls": ["http://linkedin.com/in/azbradley101"], // TODO: add to profile spec note: backend should validate full links
+        "emailAddresses": [{
+            "emailType": "home",
+            "emailAddress": "azbradley101@tosspam.com",
+            "textFormat": "HTML",
+            "lastValidated": "2011-11-27",
+            "ShareMarketInd": true
+        }, {
+            "emailType": "work",
+            "emailAddress": "azbradley103@gmail.com",
+            "textFormat": "HTML",
+            "lastValidated": "2011-11-27",
+            "ShareMarketInd": false
+        }],
+        "companyName": "My Biz Inc.", // TODO: add to profile spec
+        "businessTitle": "Sales Engineer", // TODO: add to profile spec
+        "birthDate": "1964-02-29", // TODO: add to profile spec
+        "preferences": [{ // TODO: add to profile spec - required for ADA compliance - consider sub-resource
+            "name": "newspaper",
+            "value": "WSJ"
+          }, {
+            "name": "miles",
+            "value": "Skyteam"
+        }],
+        "contactPerson": [{
+            "relationship": "spouse",
+            "person": {
+                "personName": {
+                    "surname": "Bradley",
+                    "givenName": "Amelia",
+                    "prefix": "Mrs."
+                },
+                "phones": [{
+                    "type": "home",
+                    "number": "+1 410 555 1212"
+                }, {
+                    "type": "mobile",
+                    "number": "+1 240 555 4321"
+                }]
+            }
+        }],
+        "affiliations": //TODO: J Bell will bring this for discussion with CRM group - memberships & employment can drive pricing
+        [
+            {
+                "relationship": "is member of", // this is bi-directional -> "employs", perhaps add link to mapping
+                "companyID": "AAA"
+            }
+        ], //TODO: additionally, it may be worth considering a dedicated /profile/{profile.id}/affiliations
+        "guestComments": // Comment card responses (post-stay) - also likely candidate for sub-resource. Useful for sentiment analysis - maybe useful to keep score on profile for pricing purposes.
+        [
+            {
+                "comment": {
+                "time": "2015-11-30T14:30",
+                "text": "Nice place"
+                }
+            }
+        ] ,
+        "notes":  // kept by hotel regarding the guest. Should also be link. Could be considered outside shop & book.
+        [
+            {
+                "note": {
+                    "id": "001",
+                    "reference": "",
+                    "time": "2015-11-30T14:30",
+                    "text": "Guest is interested in planning party",
+                    "action": "follow up",
+                    "assigned": "Sales",
+                    "status": "active",
+                    "updated": "2015-11-30T14:30"
+                }
+            }
+        ],
+            "guestValue": "587" // NOTE: algorithmically generated score - sentiment, spend, shopping behaviors, demographics, other similar customers behaviors
+        },
+        "links": [
+          {
+            "rel": "self",
+            "href": "/profiles/{profile.id}"
+          },
+          {
+            "rel": "loyaltyRecords",
+            "href": "/profiles/{profile.id}/loyalty"
+          },
+          {
+            "rel": "stayHistory",
+            "href": "/profiles/{profile.id}/stay-history"
+          },
+          {
+            "rel": "idDocuments",
+            "href": "/profiles/{profile.id}/id-documents" //TODO: this is needs to be discussed and potentially added as a new resource (AAA card, license, passport, etc)
+          }
+        ]
+    }
+}
